@@ -1,0 +1,28 @@
+<f:layout name="Default" />
+
+<f:section name="content">
+
+<h1>Blog List</h1>
+ <f:form action="list" additionalAttributes="{role:'form'}">
+        <div class="form-inline">
+            <div class="form-group">
+                <f:form.textfield name="search" value="{search}" class="form-control" />
+                <f:form.submit value="search" class="btn-xs btn-primary" />
+            </div>
+        </div>
+</f:form>
+<ul class="list-group">
+	<f:for each="{blogs}" as="blog">
+		<li class="list-group-item">{blog.title}
+		<f:link.action action="deleteConfirm" arguments="{blog:blog}" class="btn btn-primary btn-xs pull-right">DEL</f:link.action>
+		<f:link.action action="updateForm" arguments="{blog:blog}" class="btn btn-primary btn-xs pull-right">EDIT</f:link.action>
+		<f:link.action action="show" arguments="{blog:blog}" class="btn btn-primary btn-xs pull-right">SHOW</f:link.action>
+		
+		</li>
+		
+	</f:for>
+</ul>
+ <p class="text-muted">A maximum of {settings.blog.max} Blogs will be displayed.</p>
+<f:link.action action="addForm" class="btn btn-primary">Add Blogs</f:link.action>
+
+</f:section>

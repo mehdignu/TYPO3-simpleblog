@@ -1,0 +1,9 @@
+<div class="container">
+	<h1>Delete Blog</h1>
+	
+	would you really like to delete this blog with the title <strong>{blog.title}</strong> ?
+	<br /><br />
+	
+	<f:link.action action="list" class="btn btn-danger">no, don't delete it !</f:link.action>
+	<f:link.action action="delete" class="btn btn-success" arguments="{blog:blog}">yes delete it !</f:link.action>
+</div>
